@@ -5,6 +5,11 @@ description '<%= @data['description'] %>'
 area       :<%= @data['area'] %>
 area_alpha '<%= @data['alpha'] %>'
 
+<%
+def @data['fields'].<=>( a, b )
+  a['name'] <=> b['name']
+end
+-%>
 <% @data['fields'].sort.each do |f| -%>
 field :<%= f['name'] %>,
   :scale => <%= f['scale'].to_f %>,
