@@ -1,4 +1,4 @@
-define gdash::graph( $name = $title, $vtitle = '', $description = '', $dashboard ) {
+define gdash::graph( $vtitle = '', $description = '', $dashboard ) {
   Gdash::Dashboard[$dashboard] -> Gdash::Graph[$title]
 
   datacat {

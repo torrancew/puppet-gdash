@@ -1,4 +1,4 @@
-define gdash::dashboard( $name = $title, $description = '' ) {
+define gdash::dashboard( $description = '' ) {
   Class['gdash::configure'] -> Gdash::Dashboard[$title]
 
   file {
