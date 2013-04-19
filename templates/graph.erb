@@ -7,8 +7,8 @@ area_alpha '<%= @data['alpha'] %>'
 
 <%
 @data['fields'].each do |f|
-  def f.<=>( a, b )
-    a['name'] <=> b['name']
+  def f.<=>( b )
+    self['name'] <=> b['name']
   end
 end
 -%>
