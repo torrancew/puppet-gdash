@@ -5,7 +5,6 @@ description '<%= @data['description'] %>'
 <%- @data['fields'].each do |f| %>
 field :<%= f['name'] %>,
   :scale => <%= f['scale'].to_f %>,
-  :color => '<%= f['color'] %>',
   :alias => '<%= f['alias'] %>',
   :data  => '<%= f['data'] %>'
 
