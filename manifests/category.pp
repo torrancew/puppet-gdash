@@ -1,0 +1,12 @@
+define gdash::category() {
+  Class['gdash::configure'] -> Gdash::Category[$title]
+
+  file {
+    "${gdash::configure::template_dir}/${category}":
+      ensure => directory,
+      owner  => 'root',
+      group  => 'root',
+      mode   => 0755;
+  }
+}
+

@@ -1,20 +1,22 @@
-define gdash::dashboard( $description = '' ) {
-  Class['gdash::configure'] -> Gdash::Dashboard[$title]
+define gdash::dashboard( $category = 'servers', $description = '' ) {
+  Gdash::Category[$category]  -> Gdash::Dashboard[$title]
+
+  $dashboard_dir = "${gdash::configure::template_dir}/${category}/${title}"
 
   file {
-    "${gdash::configure::template_dir}/${title}":
+    $dashboard_dir:
       ensure  => directory,
       owner   => 'root',
       group   => 'root',
       mode    => 0755;
 
-    "${gdash::configure::template_dir}/${title}/dash.yaml":
+    "${dashboard_dir}/dash.yaml":
       ensure  => file,
       owner   => 'root',
       group   => 'root',
       mode    => 0644,
       content => template( 'gdash/dash.yaml.erb' ),
-      require => File["${gdash::configure::template_dir}/${title}"],
+      require => File[$dashboard_dir];
   }
 }
 
