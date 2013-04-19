@@ -3,7 +3,7 @@ vtitle      '<%= @vtitle %>'
 description '<%= @description %>'
 
 <%- @data['fields'].each do |f| %>
-field <%= f['name'].to_s.intern %>,
+field :<%= f['name'] %>,
   :scale => <%= f['scale'].to_f %>,
   :color => '<%= f['color'] %>',
   :alias => '<%= f['alias'] %>',
