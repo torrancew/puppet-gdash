@@ -1,6 +1,6 @@
 define gdash::graph(
   $graph_title = $title, $vtitle = '', $description = '', $area = 'none',
-  $alpha = '00', $category = 'servers', $dashboard = $hostname
+  $alpha = 0, $category = 'servers', $dashboard = $hostname
 ) {
   Gdash::Dashboard[$dashboard] -> Gdash::Graph[$title]
 
