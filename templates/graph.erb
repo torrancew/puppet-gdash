@@ -5,6 +5,13 @@ description '<%= @data['description'] %>'
 area       :<%= @data['area'] %>
 area_alpha '<%= @data['alpha'] %>'
 
+<% if @data['ymin'] != 'undef' -%> 
+ymin <%= @data['ymin'] %>
+<% -%>
+<% if @data['ymax'] != 'undef' -%> 
+ymax <%= @data['ymax'] %>
+<% -%>
+
 <%
 @data['fields'].each do |f|
   def f.<=>( b )

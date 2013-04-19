@@ -1,6 +1,6 @@
 define gdash::graph(
-  $graph_title = $title, $vtitle = '', $description = '', $area = 'none',
-  $alpha = 0, $category = 'servers', $dashboard = $hostname
+  $graph_title = $title, $vtitle = '', $description = '', $area = 'none', $alpha = 0,
+  $category = 'servers', $dashboard = $hostname, $ymin = undef, $ymax = undef
 ) {
   Gdash::Dashboard[$dashboard] -> Gdash::Graph[$title]
 
@@ -16,6 +16,8 @@ define gdash::graph(
       target => $graph_file,
       data   => {
         area        => $area,
+        ymax        => $ymax,
+        ymin        => $ymin,
         alpha       => $alpha,
         vtitle      => $vtitle,
         graph_title => $graph_title,
