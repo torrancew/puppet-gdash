@@ -1,0 +1,47 @@
+gDash Puppet Module
+===================
+
+A puppet module to install and configure gDash.
+
+Usage
+-----
+
+To install and manage the graphite service:
+
+    include gdash
+
+To configure a dashboard:
+
+    $fqdn_x509 = inline_template( "<%= @fqdn.split(/\./, ' ').reverse.join('.') %>" )
+
+    gdash::dashboard {
+      'dns_servers':
+        name        => 'DNS Servers',
+        description => 'An overview of the DNS servers',
+    }
+
+    gdash::graph {
+      'dns_cpu_usage':
+        name        => 'DNS CPU Usage',
+        vtitle      => 'percent',
+        description => 'CPU Usage for the DNS Servers',
+        dashboard   => 'dns_servers',
+    }
+
+    gdash::field {
+      "${hostname}_cpu_idle":
+        scale => 0.001,
+        graph => 'dns_cpu_usage',
+        color => 'yellow',
+        alias => "$hostname Idle"
+        data  => "sumSeries(derivative(servers.${fqdn_x509}.munin.system.cpu.idle))",
+    }
+
+Authors
+-------
+
+  * Tray Torrance <devwork@warrentorrance.com>
+
+ToDo
+----
+
