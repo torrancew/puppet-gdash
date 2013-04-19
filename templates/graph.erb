@@ -3,9 +3,9 @@ vtitle      '<%= @vtitle %>'
 description '<%= @description %>'
 
 <%- @data['fields'].each do |f| %>
-field <%= f['name'].to_sym %>, scale: <%= f['scale'].to_f %>,
-                               color: '<%= f['color'] %>',
-                               alias: '<%= f['alias'] %>',
-                               data:  '<%= f['data'] %>'
+field <%= f['name'].to_sym %>, :scale => <%= f['scale'].to_f %>,
+                               :color => '<%= f['color'] %>',
+                               :alias => '<%= f['alias'] %>',
+                               :data  => '<%= f['data'] %>'
 
 <%- end %>
