@@ -7,10 +7,10 @@ area_alpha '<%= @data['alpha'] %>'
 
 <% if @data['ymin'] != 'undef' -%> 
 ymin <%= @data['ymin'] %>
-<% -%>
+<% end -%>
 <% if @data['ymax'] != 'undef' -%> 
 ymax <%= @data['ymax'] %>
-<% -%>
+<% end -%>
 
 <%
 @data['fields'].each do |f|
