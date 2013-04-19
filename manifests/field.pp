@@ -1,6 +1,6 @@
 define gdash::field(
   $scale = 1, $category = 'servers', $dashboard = $hostname,
-  $alias = $title, $graph, $data
+  $color = undef, $alias = $title, $graph, $data
 ) {
   Gdash::Graph[$graph] -> Gdash::Field[$title]
 

@@ -8,6 +8,9 @@ area_alpha '<%= @data['alpha'] %>'
 <% @data['fields'].each do |f| -%>
 field :<%= f['name'] %>,
   :scale => <%= f['scale'].to_f %>,
+  <% if f['color'] -%>
+  :color => '<%= f['color'] %>',
+  <% end -%>
   :alias => '<%= f['alias'] %>',
   :data  => '<%= f['data'] %>'
 
