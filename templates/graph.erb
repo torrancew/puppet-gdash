@@ -6,8 +6,10 @@ area       :<%= @data['area'] %>
 area_alpha '<%= @data['alpha'] %>'
 
 <%
-def @data['fields'].<=>( a, b )
-  a['name'] <=> b['name']
+@data['fields'].each do |f|
+  def f.<=>( a, b )
+    a['name'] <=> b['name']
+  end
 end
 -%>
 <% @data['fields'].sort.each do |f| -%>
