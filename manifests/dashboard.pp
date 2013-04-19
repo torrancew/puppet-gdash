@@ -15,7 +15,7 @@ define gdash::dashboard( $category = 'servers', $description = '' ) {
       owner   => 'root',
       group   => 'root',
       mode    => 0644,
-      content => template( 'gdash/dash.yaml.erb' ),
+      content => "---\n:name: $name\n:description: $description\n",
       require => File[$dashboard_dir];
   }
 }

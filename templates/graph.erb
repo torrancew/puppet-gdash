@@ -1,6 +1,6 @@
-title       '<%= @title %>'
-vtitle      '<%= @vtitle %>'
-description '<%= @description %>'
+title       '<%= @data['graph_title'] %>'
+vtitle      '<%= @data['vtitle'] %>'
+description '<%= @data['description'] %>'
 
 <%- @data['fields'].each do |f| %>
 field :<%= f['name'] %>,
