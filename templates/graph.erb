@@ -2,6 +2,9 @@ title       '<%= @data['graph_title'] %>'
 vtitle      '<%= @data['vtitle'] %>'
 description '<%= @data['description'] %>'
 
+area       :<%= @data['area'] %>
+area_alpha '<%= @data['alpha'] %>'
+
 <% @data['fields'].each do |f| -%>
 field :<%= f['name'] %>,
   :scale => <%= f['scale'].to_f %>,
