@@ -1,4 +1,4 @@
-define gdash::dashboard( $category = 'servers', $description = '' ) {
+define gdash::dashboard( $category = 'servers', $description = '', $graph_properties = {} ) {
   Gdash::Category[$category]  -> Gdash::Dashboard[$title]
 
   $dashboard_dir = "${gdash::configure::template_dir}/${category}/${title}"
@@ -15,7 +15,7 @@ define gdash::dashboard( $category = 'servers', $description = '' ) {
       owner   => 'root',
       group   => 'root',
       mode    => 0644,
-      content => "---\n:name: $name\n:description: $description\n",
+      content => template( 'gdash/dash.yaml.erb' ),
       require => File[$dashboard_dir];
   }
 }
