@@ -1,9 +1,4 @@
 class gdash {
-  include gdash::configure
-
-  Gdash::Category<<||>>
-  Gdash::Dashboard<<||>>
-  Gdash::Graph<<||>>
-  Gdash::Field<<||>>
+  anchor { 'gdash::begin': } -> include gdash::configure -> anchor { 'gdash::end': }
 }
 
