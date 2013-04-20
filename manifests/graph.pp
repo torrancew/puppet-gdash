@@ -8,7 +8,7 @@ define gdash::graph(
 
   datacat {
     $graph_file:
-      template => 'gdash/graph.erb',
+      template => 'gdash/graph.erb';
   }
 
   datacat_fragment {
@@ -22,7 +22,7 @@ define gdash::graph(
         vtitle      => $vtitle,
         graph_title => $graph_title,
         description => $description,
-      }
+      };
   }
 }
 
