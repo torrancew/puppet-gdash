@@ -6,8 +6,9 @@ define gdash::field(
 
   datacat_fragment {
     "${category}_${graph}_${title}":
-      target => "${gdash::configure::template_dir}/${category}/${dashboard}/${graph}.graph",
-      data   => {
+      target   => "${gdash::configure::template_dir}/${category}/${dashboard}/${graph}.graph",
+      loglevel => 'debug',
+      data     => {
         fields => [{
           name  => $title,
           scale => $scale,

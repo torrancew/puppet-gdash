@@ -13,8 +13,9 @@ define gdash::graph(
 
   datacat_fragment {
     "${category}_${title}":
-      target => $graph_file,
-      data   => {
+      target   => $graph_file,
+      loglevel => 'debug',
+      data     => {
         area        => $area,
         ymax        => $ymax,
         ymin        => $ymin,
