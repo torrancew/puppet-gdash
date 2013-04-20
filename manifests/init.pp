@@ -1,4 +1,4 @@
 class gdash {
-  anchor { 'gdash::begin': } -> include gdash::configure -> anchor { 'gdash::end': }
+  anchor { 'gdash::begin': } -> class { 'gdash::configure': } -> anchor { 'gdash::end': }
 }
 
